@@ -11,14 +11,15 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	va_start(args, format);
 	int count = 0;
+	va_start(args, format);
+
 
 	while (*format != '\0') {
 		if (*format == '%') {
-			format++; // move past '%'
+			format++;
 
-			// Handle conversion specifier
+
 			switch (*format) {
 				case 'c': {
 					char c = (char) va_arg(args, int);
@@ -72,7 +73,7 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				}
-				default: // unsupported conversion specifier
+				default:
 					putchar('%');
 					putchar(*format);
 					count += 2;
@@ -87,5 +88,5 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	return count;
+	return (count);
 }
