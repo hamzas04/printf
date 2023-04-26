@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-
+#include <stdarg.h>
 /**
  * struct format_t - Struct to store format specifiers and their associated
  * @specifier: the format specifier character
